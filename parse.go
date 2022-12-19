@@ -48,7 +48,7 @@ func withTemplates(dirPath string, fileSuffix string) (map[string]string, error)
 			if err != nil {
 				return rootTemplates, err
 			}
-			stripedFileName := strings.TrimRight(file.Name(), fileSuffix)
+			stripedFileName := strings.TrimSuffix(file.Name(), fileSuffix)
 			rootTemplates[stripedFileName] = string(data)
 		}
 	}
